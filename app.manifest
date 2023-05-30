@@ -1,11 +1,11 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "SA-DetectionInsight",
+    "title": "links_and_trusted_domains_app",
     "id": {
       "group": null,
-      "name": "SA-DetectionInsight",
-      "version": "1.0.3"
+      "name": "links_and_trusted_domains_app",
+      "version": "1.0.0"
     },
     "author": [
       {
@@ -15,7 +15,7 @@
       }
     ],
     "releaseDate": null,
-    "description": "SA-DetectionInsight aim to provide richer insights and visualizations of your Enterprise Security Security Detections.",
+    "description": "This application gives you insight into use of external in your Dashboards and if they are allowed or not in the Trusted Domains Splunk configuration.  See https://docs.splunk.com/Documentation/SplunkCloud/latest/Admin/ConfigureDashboardsTrustedDomains for details.",
     "classification": {
       "intendedAudience": "Security Specialists",
       "categories": [
