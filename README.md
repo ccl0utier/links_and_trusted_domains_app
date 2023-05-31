@@ -42,6 +42,8 @@ This covers the following HTML tags:
 - `track`
 - `video`
 
+**Note:** Splunk domains (*.splunk.com) are considered **Trusted** by default.
+
 ## What it looks like
 
 ![Main Dashboard](readme/dashboard.png)
