@@ -3,7 +3,7 @@
   <description>Overview of links used in Dashboards and the Trusted Domains configuration.</description>
   <search id="baseSearchAllDashboards">
     <query>
-      | rest /servicesNS/-/-/data/ui/views f=eai:appName f=author f=title f=eai:data
+      | rest splunk_server=local count=0 /servicesNS/-/-/data/ui/views f=eai:appName f=author f=title f=eai:data
     </query>
     <earliest>-1m@m</earliest>
     <latest>now</latest>
@@ -46,7 +46,7 @@
       <title>Trusted Domain List</title>
       <table>
         <search>
-          <query>| rest splunk_server=local /services/configs/conf-web-features/feature:dashboards_csp
+          <query>| rest splunk_server=local count=0 /services/configs/conf-web-features/feature:dashboards_csp
 | transpose
 | search column="dashboards_trusted_domain.*"
 | eval column = replace(column, "^dashboards_trusted_domain\.", "")
@@ -74,8 +74,10 @@
   | eval value = "\s*" . replace('row 1', "\*", ".*") . ".*"
   | stats values(value) as allowed
   | eval allowed = "(?i)(" . mvjoin(allowed, "|") . ")"
+  | appendpipe [stats count | where count=0 | eval allowed="^$"]
   | return allowed
 ]
+| eval allowed = allowed . "|\s*.*\.splunk\.com\/"
 | rex field=href max_match=0 "(?i)^\s*http[s]*\:\/\/(?&lt;domain&gt;.*?)(\/|$)"
 | eval isAllowed = if(match(href, allowed), "Yes", "No")
 | search isAllowed="No"
@@ -112,8 +114,10 @@
   | eval value = "\s*" . replace('row 1', "\*", ".*") . ".*"
   | stats values(value) as allowed
   | eval allowed = "(?i)(" . mvjoin(allowed, "|") . ")"
+  | appendpipe [stats count | where count=0 | eval allowed="^$"]
   | return allowed
 ]
+| eval allowed = allowed . "|\s*.*\.splunk\.com\/"
 | rex field=href max_match=0 "(?i)^\s*http[s]*\:\/\/(?&lt;domain&gt;.*?)(\/|$)"
 | eval isAllowed = if(match(href, allowed), "Yes", "No")
 | stats dc(href) as links_count values(domain) as Domains values(href) as Links by author eai:appName title isAllowed
