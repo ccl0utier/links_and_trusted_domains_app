@@ -2,7 +2,7 @@
 
 ## Overview
 
-This application for Splunk Cloud gives you insight into use of external in your Dashboards and if they are allowed or not in the Trusted Domains Splunk configuration.  See the official Splunk documentation for this feature [here](https://docs.splunk.com/Documentation/SplunkCloud/latest/Admin/ConfigureDashboardsTrustedDomains) for details.
+This application for Splunk Cloud gives you insight into use of external links in your Dashboards and if they are allowed or not in the Trusted Domains Splunk configuration.  See the official Splunk documentation for this feature [here](https://docs.splunk.com/Documentation/SplunkCloud/latest/Admin/ConfigureDashboardsTrustedDomains) and this blog post [here](https://www.splunk.com/en_us/blog/platform/improving-security-updates-to-classic-simplexml-dashboards-containing-external-links-or-content.html) for details.
 
 It aims to quickly show you the links used in any of your dashboards and if the links/domains used are currently allowed or not in your environment.
 
