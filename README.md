@@ -44,7 +44,7 @@ This covers the following HTML tags:
 
 ## What it looks like
 
-![Main Dashboard](readme/Dashboard.png)
+![Main Dashboard](readme/dashboard.png)
 
 ## Notes & Feedback
 
