@@ -48,6 +48,10 @@ This covers the following HTML tags:
 
 ![Main Dashboard](readme/dashboard.png)
 
+There is also a Dashboard Studio version:
+
+![UDF Version](readme/udf_dashboard.png)
+
 ## Notes & Feedback
 
 If you have feedback on this Splunk app. (improvement ideas, issues, questions), feel free to contact me via email or open an issue on this project on GitHub.
