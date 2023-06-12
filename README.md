@@ -42,7 +42,20 @@ This covers the following HTML tags:
 - `track`
 - `video`
 
-**Note:** Splunk domains (*.splunk.com) are considered **Trusted** by default.
+**Note:** The following list of Splunk domains are considered **Trusted** by default:
+
+- apps.splunk.com
+- dev.splunk.com
+- docs.flowmill.com
+- docs.splunk.com
+- help.rigor.com
+- help.victorops.com
+- lantern.splunk.com
+- splunkbase.com
+- splunkbase.splunk.com
+- splunkui.splunk.com
+- www.splunk.com/download
+- www.splunk.com/products
 
 ## What it looks like
 
